@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   StyleSheet,
   View,
@@ -100,8 +100,8 @@ export default function App() {
       ? angles.isFlat
         ? 'SURFACE'
         : angles.isVertical
-        ? 'VERTICAL'
-        : 'HORIZONTAL'
+          ? 'VERTICAL'
+          : 'HORIZONTAL'
       : activeMode;
 
   // Define o ângulo principal de referência para o painel digital
@@ -125,7 +125,7 @@ export default function App() {
   useEffect(() => {
     if (isCurrentlyLevel && !lastLevelStateRef.current && isHapticEnabled) {
       if (Platform.OS !== 'web') {
-        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => { });
       }
     }
     lastLevelStateRef.current = isCurrentlyLevel;
@@ -140,14 +140,14 @@ export default function App() {
       z: sensorData.z - 1, // mantém a gravidade de 1G no eixo Z se deitado
     });
     if (Platform.OS !== 'web' && isHapticEnabled) {
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => { });
     }
   };
 
   const handleResetCalibration = () => {
     setCalibration(null);
     if (Platform.OS !== 'web' && isHapticEnabled) {
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => { });
     }
   };
 
@@ -161,7 +161,7 @@ export default function App() {
       setHeldData(sensorData);
     }
     if (Platform.OS !== 'web' && isHapticEnabled) {
-      Haptics.selectionAsync().catch(() => {});
+      Haptics.selectionAsync().catch(() => { });
     }
   };
 
