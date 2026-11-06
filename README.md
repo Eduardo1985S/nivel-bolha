@@ -203,4 +203,3 @@ Fique calmo(a), a maioria das dúvidas se resolve em 10 segundos:
 
 ---
 
-❤️ *Projeto desenvolvido com carinho para ser fácil, acessível e útil no seu dia a dia!*
